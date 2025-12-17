@@ -14,31 +14,107 @@
             <div class="flex justify-between items-center h-16 md:h-20">
                 <div class="flex-shrink-0">
                     <a href="#inicio" class="flex items-center gap-2">
-                        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                            <span className="text-white">AP</span>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                            <span class="text-white">AP</span>
                         </div>
-                        <div className="hidden sm:block">
-                            <div className="text-gray-900">AutoParts</div>
-                            <div className="text-xs text-gray-500">Import Solutions</div>
+                        <div class="hidden sm:block">
+                            <div class="text-gray-900">AutoParts</div>
+                            <div class="text-xs text-gray-500">Import Solutions</div>
                         </div>
                     </a>
                 </div>
             <!-- Desktop Navigation  -->
-                <div className="hidden md:flex items-center gap-8">
+                <div class="hidden md:flex items-center gap-8">
                     <a  href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors">Inicio</a>
                     <a  href="#quienes-somos" class="text-gray-700 hover:text-blue-600 transition-colors">Quiénes Somos</a>
                     <a  href="#productos" class="text-gray-700 hover:text-blue-600 transition-colors">Productos</a>
                     <a  href="#servicios" class="text-gray-700 hover:text-blue-600 transition-colors">Servicios</a>
                     <a  href="#contacto" class="text-gray-700 hover:text-blue-600 transition-colors">Contacto</a>
                 </div>
-                <div>
-                    <!-- TODO add Whatsapp button -->
+                <div class="hidden md:block">
+                    <!-- Whatsapp button -->
+                    <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                        <i data-lucide="message-circle" class="text-black-500 w-8 h-8"></i>
+                        <span>Contáctanos por WhatsApp</span>
+                    </a>
                 </div>
 
             </div>
         </nav>
         
     </header>
-    <h1>paconi</h1>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
+
+
+<!-- 
+import { MessageCircle } from 'lucide-react';
+
+interface WhatsAppButtonProps {
+  variant?: 'header' | 'primary' | 'secondary' | 'icon';
+  text?: string;
+  message?: string;
+}
+
+export function WhatsAppButton({ 
+  variant = 'primary', 
+  text,
+  message = 'Hola, me gustaría recibir más información sobre sus productos.'
+}: WhatsAppButtonProps) {
+  const phoneNumber = '5491123456789'; // Número de ejemplo
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  if (variant === 'icon') {
+    return (
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
+      >
+        <MessageCircle size={20} />
+      </a>
+    );
+  }
+
+  if (variant === 'header') {
+    return (
+      
+    );
+  }
+
+  if (variant === 'secondary') {
+    return (
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-green-500 text-green-600 rounded-lg hover:bg-green-50 transition-colors"
+      >
+        <MessageCircle size={20} />
+        <span>{text || 'Contactar'}</span>
+      </a>
+    );
+  }
+
+  return (
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all hover:shadow-lg"
+    >
+      <MessageCircle size={24} />
+      <span>{text || 'Solicitar Catálogo por WhatsApp'}</span>
+    </a>
+  );
+}
+-->
