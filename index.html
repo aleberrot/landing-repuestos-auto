@@ -32,7 +32,7 @@
                     <a  href="#contacto" class="text-gray-700 hover:text-blue-600 transition-colors">Contacto</a>
                 </div>
                 <div class="hidden md:block">
-                    <!-- Whatsapp button -->
+                    <!-- Whatsapp button (Desktop) -->
                     <a
                     href="#"
                     target="_blank"
@@ -43,78 +43,53 @@
                     </a>
                 </div>
 
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden items-center gap-2">
+                        <a
+                            href="#"        
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
+                            >
+                            <i data-lucide="message-circle" class="text-black-500 w-8 h-8"></i>
+                        </a>
+                    <button
+                    id="menu-mobile"
+                    class="p-2 rounded-md text-gray-700 hover:bg-gray-200 relative"
+                    >
+                        <i  data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden border-t border-gray-200 py-4" hidden id="nav-mobile">
+                <div class="flex flex-col gap-4">
+                    <a
+                    href="#inicio"
+                    class="text-gray-700 hover:text-blue-600 transition-colors px-2 menu-mobile-anchor">Inicio</a>
+                    <a
+                    href="#quienes-somos"
+                    class="text-gray-700 hover:text-blue-600 transition-colors px-2 menu-mobile-anchor">Quiénes Somos</a>
+                    <a
+                    href="#productos"
+                    class="text-gray-700 hover:text-blue-600 transition-colors px-2 menu-mobile-anchor">Productos</a>
+                    <a
+                    href="#servicios"
+                    class="text-gray-700 hover:text-blue-600 transition-colors px-2 menu-mobile-anchor">Servicios</a>
+                    <a
+                    href="#contacto"
+                    class="text-gray-700 hover:text-blue-600 transition-colors px-2 menu-mobile-anchor">Contacto</a>
+                    
+                </div>
             </div>
         </nav>
         
     </header>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
 </html>
-
-
-<!-- 
-import { MessageCircle } from 'lucide-react';
-
-interface WhatsAppButtonProps {
-  variant?: 'header' | 'primary' | 'secondary' | 'icon';
-  text?: string;
-  message?: string;
-}
-
-export function WhatsAppButton({ 
-  variant = 'primary', 
-  text,
-  message = 'Hola, me gustaría recibir más información sobre sus productos.'
-}: WhatsAppButtonProps) {
-  const phoneNumber = '5491123456789'; // Número de ejemplo
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-  if (variant === 'icon') {
-    return (
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
-      >
-        <MessageCircle size={20} />
-      </a>
-    );
-  }
-
-  if (variant === 'header') {
-    return (
-      
-    );
-  }
-
-  if (variant === 'secondary') {
-    return (
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-green-500 text-green-600 rounded-lg hover:bg-green-50 transition-colors"
-      >
-        <MessageCircle size={20} />
-        <span>{text || 'Contactar'}</span>
-      </a>
-    );
-  }
-
-  return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all hover:shadow-lg"
-    >
-      <MessageCircle size={24} />
-      <span>{text || 'Solicitar Catálogo por WhatsApp'}</span>
-    </a>
-  );
-}
--->
